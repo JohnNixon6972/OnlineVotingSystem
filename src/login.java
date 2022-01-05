@@ -19,8 +19,6 @@ public class login {
 
         String database_user = "john";
         String database_password = "password";
-        long a_no = 123456789987L;
-        System.out.println(a_no);
 
 
         try {
