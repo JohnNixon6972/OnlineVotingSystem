@@ -1,5 +1,4 @@
 import java.util.*;
-import java.util.concurrent.ThreadLocalRandom;
 import java.sql.*;
 
 public class register {
