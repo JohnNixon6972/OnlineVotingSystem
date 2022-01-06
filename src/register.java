@@ -30,8 +30,8 @@ public class register {
         // System.out.print(f_name+" "+l_name+" "+address+" "+city+" "+mob_num);
         
         scan.close();
-        String database_user = "john";
-        String database_password = "password";
+        String database_user = "Hrutuja Patnekar";
+        String database_password = "root";
 
 
         try {

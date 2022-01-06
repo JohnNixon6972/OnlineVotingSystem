@@ -17,8 +17,8 @@ public class login {
         System.out.println("password = " + password);
         scan.close();
 
-        String database_user = "john";
-        String database_password = "password";
+        String database_user = "Hrutuja Patnekar";
+        String database_password = "root";
 
 
         try {
