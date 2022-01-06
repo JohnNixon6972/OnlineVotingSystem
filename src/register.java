@@ -26,6 +26,8 @@ public class register {
         double randomNum = Math.random() * ( max_val - min_val );
         int id = (int)randomNum;
 
+        System.out.println("Your User ID is :: "+id);
+
         // System.out.print(f_name+" "+l_name+" "+address+" "+city+" "+mob_num);
         
         scan.close();
@@ -41,6 +43,7 @@ public class register {
             String query = String.format("insert into users values(%d,\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",%o);",id,password,f_name,l_name,address,city,mob_num);
             System.out.println(query);
             stmt.executeUpdate(query);
+            System.out.println("User Created Sucessfully!!");
 
             con.close();
         } catch (Exception e) {

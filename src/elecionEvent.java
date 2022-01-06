@@ -39,7 +39,7 @@ public class elecionEvent {
                     "jdbc:mysql://localhost:3306/online_voting_system", database_user, database_password);
             Statement stmt = con.createStatement();
             String query = String.format("insert into election values(%d,\"%s\",\"%s\",\"%s\",%d,\"%s\");",election_id,election_name,election_type,election_start_date,duration,election_constituency);
-            System.out.println(query);
+            // System.out.println(query);
             stmt.executeUpdate(query);
 
             con.close();
