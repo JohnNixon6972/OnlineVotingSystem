@@ -44,13 +44,13 @@ public class register {
         // System.out.print(f_name+" "+l_name+" "+address+" "+city+" "+mob_num);
         
         scan.close();
-        String database_user = "john";
-        String database_password = "password";
+        String database_user = "root";
+        String database_password = "";
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/online_voting_system", database_user, database_password);
+                    "jdbc:mysql://root@localhost:3307/online_voting_system", database_user, database_password);
             Statement stmt = con.createStatement();
             String query = String.format("insert into users values(%d,\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",%o,\"%s\",\"%s\",\"%s\",\"%s\");",id,password,f_name,l_name,address,city,mob_num,dob,adhaar_card_no,constituency,state);
             // System.out.println(query);
