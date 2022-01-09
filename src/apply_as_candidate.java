@@ -13,13 +13,13 @@ public class apply_as_candidate {
 
         ArrayList<Integer> u_ids = new ArrayList<Integer>();
 
-        String database_user = "john";
-        String database_password = "password";
+        String database_user = "uhzci14vwfvrompx";
+        String database_password = "UrNhWEKwSchauVtObk0x";
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/online_voting_system", database_user, database_password);
+                    "jdbc:mysql://uhzci14vwfvrompx:UrNhWEKwSchauVtObk0x@bggkb6uymbi8nrygousy-mysql.services.clever-cloud.com:3306/bggkb6uymbi8nrygousy", database_user, database_password);
             Statement stmt = con.createStatement();
 
             ResultSet rs = stmt.executeQuery("select user_id from users;");

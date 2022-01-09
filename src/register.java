@@ -44,13 +44,13 @@ public class register {
         // System.out.print(f_name+" "+l_name+" "+address+" "+city+" "+mob_num);
         
         scan.close();
-        String database_user = "root";
-        String database_password = "";
+        String database_user = "uhzci14vwfvrompx";
+        String database_password = "UrNhWEKwSchauVtObk0x";
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection(
-                    "jdbc:mysql://root@localhost:3307/online_voting_system", database_user, database_password);
+                    "jdbc:mysql://uhzci14vwfvrompx:UrNhWEKwSchauVtObk0x@bggkb6uymbi8nrygousy-mysql.services.clever-cloud.com:3306/bggkb6uymbi8nrygousy", database_user, database_password);
             Statement stmt = con.createStatement();
             String query = String.format("insert into users values(%d,\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",%o,\"%s\",\"%s\",\"%s\",\"%s\");",id,password,f_name,l_name,address,city,mob_num,dob,adhaar_card_no,constituency,state);
             // System.out.println(query);
