@@ -80,7 +80,7 @@ public class apply_as_candidate {
                     System.exit(0);
                 }
 
-                query = "insert into candidates values(" + u_id + ",\"" + p_id + "\"," + e_id + ")";
+                query = "insert into candidates values(" + u_id + ",\"" + p_id + "\"," + e_id + ",0);";
                 stmt.executeUpdate(query);
                 System.out.println("You have Sucessfully registered as a candidiate!!");
 

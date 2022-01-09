@@ -6,7 +6,6 @@ public class add_positions {
 
         System.out.println("------------ Add positions for election ----------");
         System.out.println("Current Upcomming Election Events :: ");
-
         
         String database_user = "uhzci14vwfvrompx";
         String database_password = "UrNhWEKwSchauVtObk0x";
@@ -54,6 +53,7 @@ public class add_positions {
                 stmt.executeUpdate(query);
 
                 System.out.println("Added "+pos_name+" position to "+e_name+" election successfully!!");
+                
             }
             else{
                 System.out.println("Invalid Election ID!!");
