@@ -2,7 +2,7 @@ import java.util.*;
 import java.sql.*;
 
 public class publish_result {
-    public static void main(String args[]){
+    public void publish_result_main(){
         Scanner scan = new Scanner(System.in);
 
         System.out.println("-----------------------------Publish Result-------------------------");
@@ -53,6 +53,5 @@ public class publish_result {
         } catch (Exception e) {
             System.out.println(e);
         }
-        scan.close();
     }
 }

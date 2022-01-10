@@ -2,7 +2,7 @@ import java.util.*;
 import java.sql.*;
 
 public class apply_as_candidate {
-    public static void main(String args[]) {
+    public void apply_as_candidate_main() {
         Scanner scan = new Scanner(System.in);
 
         int u_id;
@@ -92,7 +92,6 @@ public class apply_as_candidate {
         }
 
         System.out.println();
-        scan.close();
     }
 
 }

@@ -2,7 +2,7 @@ import java.util.*;
 import java.sql.*;
 
 public class vote_in_election {
-    public static void main(String args[]) {
+    public void vote_in_election_main() {
 
         int u_id, e_id, confirm, vote_for_c_id, vote = 1;
         String constituency, position_id;
@@ -23,18 +23,18 @@ public class vote_in_election {
             String query1 = String.format("Select user_id from users where user_id = " + u_id + ";");
             rs = stmt.executeQuery(query1);
             rs.next();
-            System.out.println("Your user_id is as follows :" + rs.getString(1));
+            System.out.println("Your user_id is as follows :" + rs.getInt(1));
 
             String query2 = String.format("Select voter_id from voter_id_list where user_id = " + u_id + ";");
             rs = stmt.executeQuery(query2);
             rs.next();
-            System.out.println("Your voter_id is as follows :" + rs.getString(1));
+            System.out.println("Your voter_id is as follows :" + rs.getLong(1));
 
             String query3 = String.format("Select constituency from users where user_id = " + u_id + ";");
             rs = stmt.executeQuery(query3);
             rs.next();
             constituency = rs.getString(1);
-            System.out.println("You belong to :" + rs.getString(1) + "Constituency");
+            System.out.println("You belong to :" + rs.getString(1) + " Constituency");
 
             String open_type = "Open";
             System.out.println(open_type);
@@ -64,7 +64,7 @@ public class vote_in_election {
 
             if (rs.next() == true) {
                 System.out.print("You u have already voted");
-                System.exit(0);
+                return;
             }
 
             String query5 = String.format("Select p_id , position_name from election_positions where e_id = %d", e_id);
@@ -105,8 +105,8 @@ public class vote_in_election {
                     System.out.println(rs.getInt(1));
                     votes_gained = rs.getInt(1) + 1;
 
-                    String query7 = String.format("update candidates set no_of_votes =  \"%d\" where c_id = \"%d\";",
-                            votes_gained, vote_for_c_id);
+                    String query7 = String.format("update candidates set no_of_votes =  \"%d\" where c_id = \"%d\" and p_id = \"%s\";",
+                            votes_gained, vote_for_c_id,position_id);
                     stmt.executeUpdate(query7);
                     System.out.print(query7);
                     String query9 = String.format("Insert into votes_casted values(\"%d\",\"%d\",\"%d\");", vote, u_id,
@@ -120,7 +120,6 @@ public class vote_in_election {
             }
         } catch (Exception e) {
             System.out.println(e);
-            sc.close();
         }
     }
 

@@ -2,7 +2,7 @@ import java.util.*;
 import java.sql.*;
 
 public class View_result {
-    public static void main(String args[]) {
+    public void view_result_main() {
         Scanner scan = new Scanner(System.in);
         int u_id;
         System.out.print("Enter User ID :: ");
@@ -84,7 +84,6 @@ public class View_result {
         } catch (Exception e) {
             System.out.println(e);
         }
-        scan.close();
 
     }
 }

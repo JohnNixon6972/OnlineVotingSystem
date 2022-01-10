@@ -1,11 +1,14 @@
 import java.util.*;
 import java.util.Date;
+
+import com.mysql.cj.util.EscapeTokenizer;
+
 import java.sql.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
 public class apply_voter_id {
-    public static void main(String args[]) {
+    public void apply_voter_id_main() {
 
         String  para4;
         List<String> para2;
@@ -24,17 +27,17 @@ public class apply_voter_id {
                     "jdbc:mysql://uhzci14vwfvrompx:UrNhWEKwSchauVtObk0x@bggkb6uymbi8nrygousy-mysql.services.clever-cloud.com:3306/bggkb6uymbi8nrygousy",
                     database_user, database_password);
             Statement stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery("Select user_id from users ;");
+            ResultSet rs = stmt.executeQuery("Select user_id from voter_id_list;");
             ResultSet ps;
 
             while (rs.next()) {
                 u_ids.add(rs.getInt(1));
             }
 
-            if (u_ids.contains(user_id)) {
+            if (!u_ids.contains(user_id)) {
                 // ArrayList<String> DOB = new ArrayList<String>();
 
-                rs = stmt.executeQuery("Select DOB from users where user_id = user_id");
+                rs = stmt.executeQuery("Select DOB from users where user_id = "+user_id+";");
                 while (rs.next()) {
                     Date DOB = rs.getDate(1);
                     String pattern = "yyyy-mm-dd";
@@ -47,7 +50,7 @@ public class apply_voter_id {
                     para4 = date.substring(8, 9);
 
                     ArrayList<String> adhaar_card = new ArrayList<String>();
-                    ps = stmt.executeQuery("Select Adhaar_Card_No from users where user_id = user_id");
+                    ps = stmt.executeQuery("Select Adhaar_Card_No from users where user_id = "+user_id+";");
                     while (ps.next()) {
                         System.out.println(ps.getString(1));
                         adhaar_card.add(ps.getString(1));
@@ -63,6 +66,7 @@ public class apply_voter_id {
                         parameter.append(para2.get(i));
 
                         voter_id =  parameter.toString() + para4.toString();
+
                         System.out.println("Your Voter_ID is follows : " + voter_id);
                         String query = String.format("Insert into voter_id_list values(\"%s\",\"%d\");", voter_id,
                                 user_id);
@@ -75,11 +79,12 @@ public class apply_voter_id {
                 }
 
             }
+            else{
+                System.out.println("User Already has Voter ID!!");
+            }
 
         } catch (Exception e) {
             System.out.println(e);
-            sc.close();
-
         }
 
     }

@@ -2,7 +2,7 @@ import java.util.*;
 import java.sql.*;
 
 public class register {
-    public static void main(String args[]){
+    public void register_main(){
         Scanner scan = new Scanner(System.in);
         System.out.println("------------------------------ Registration Page --------------------");
         String f_name,l_name,address,city,password,dob,adhaar_card_no,constituency,state;
@@ -43,7 +43,6 @@ public class register {
 
         // System.out.print(f_name+" "+l_name+" "+address+" "+city+" "+mob_num);
         
-        scan.close();
         String database_user = "uhzci14vwfvrompx";
         String database_password = "UrNhWEKwSchauVtObk0x";
 

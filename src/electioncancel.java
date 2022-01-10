@@ -2,7 +2,7 @@ import java.util.*;
 import java.sql.*;
 
 public class electioncancel {
-    public static void main(String args[]) {
+    public void election_cancel_main() {
 
         String database_user = "uhzci14vwfvrompx";
         String database_password = "UrNhWEKwSchauVtObk0x";
@@ -29,7 +29,6 @@ public class electioncancel {
             Scanner scan = new Scanner(System.in);
             int e_id = scan.nextInt();
 
-            scan.close();
             if (e_ids.contains(e_id)) {
                 stmt.executeUpdate("delete from election where e_id = " + e_id);
                 System.out.println("Election with ID " + e_id + " deleted Successfully!!");

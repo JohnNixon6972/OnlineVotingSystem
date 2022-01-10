@@ -2,7 +2,7 @@ import java.util.*;
 import java.sql.*;
 
 public class view_stats {
-    public static void main(String args[]) {
+    public void view_stats_main() {
         Scanner scan = new Scanner(System.in);
 
         System.out.println("---------------------- Election Stats ----------------------");
@@ -75,6 +75,5 @@ public class view_stats {
         } catch (Exception e) {
             System.out.println(e);
         }
-        scan.close();
     }
 }

@@ -2,12 +2,12 @@ import java.util.*;
 import java.sql.*;
 
 public class view_voter_id {
-    public static void main(String[] args) {
+    public void view_voter_id_main() {
 
         Scanner sc = new Scanner(System.in);
         int u_id;
-        String database_user = "Hrutuja Patnekar";
-        String database_password = "root";
+        String database_user = "uhzci14vwfvrompx";
+        String database_password = "UrNhWEKwSchauVtObk0x";
 
         System.out.println("Enter your user ID : ");
         u_id = sc.nextInt();
@@ -15,7 +15,7 @@ public class view_voter_id {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/online_voting_system", database_user, database_password);
+                    "jdbc:mysql://uhzci14vwfvrompx:UrNhWEKwSchauVtObk0x@bggkb6uymbi8nrygousy-mysql.services.clever-cloud.com:3306/bggkb6uymbi8nrygousy", database_user, database_password);
             Statement stmt = con.createStatement();
             ResultSet rs;
             String query1 = String.format("Select voter_id from voter_id_list where user_id = " + u_id + ";");
@@ -36,8 +36,6 @@ public class view_voter_id {
                     + rs.getString(4) + "\t\t" + rs.getString(5));
             System.out.println(query);
             stmt.executeQuery(query);
-
-            sc.close();
             con.close();
         } catch (Exception e) {
             System.out.println(e);

@@ -1,7 +1,7 @@
 import java.util.*;
 import java.sql.*;
 public class add_positions {
-    public static void main(String args[]){
+    public  void add_positions_main(){
         Scanner scan = new Scanner(System.in);
 
         System.out.println("------------ Add positions for election ----------");
@@ -63,7 +63,5 @@ public class add_positions {
             System.out.println(e);
         }
 
-
-        scan.close();
     }
 }

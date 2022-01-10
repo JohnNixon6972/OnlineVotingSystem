@@ -2,7 +2,7 @@ import java.util.*;
 import java.sql.*;
 
 public class elecionEvent {
-    public static void main(String args[]){
+    public void election_event_main(){
         Scanner scan = new Scanner(System.in);
         
         String election_name,election_type,election_start_date,election_constituency;
@@ -28,7 +28,6 @@ public class elecionEvent {
         
         System.out.println(election_name+" "+election_type+" "+election_start_date+" "+duration+" "+election_constituency);
         System.out.println("Election Id for above election is :: "+election_id);
-        scan.close();
 
         String database_user = "uhzci14vwfvrompx";
         String database_password = "UrNhWEKwSchauVtObk0x";
