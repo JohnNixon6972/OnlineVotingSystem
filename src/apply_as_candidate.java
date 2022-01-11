@@ -2,14 +2,11 @@ import java.util.*;
 import java.sql.*;
 
 public class apply_as_candidate {
-    public void apply_as_candidate_main() {
+    public void apply_as_candidate_main(String ID) {
         Scanner scan = new Scanner(System.in);
 
-        int u_id;
+        int u_id = Integer.parseInt(ID);
         System.out.println("----------- Apply as Candidate ------------");
-        System.out.print("Enter your User ID :: ");
-        u_id = scan.nextInt();
-        scan.nextLine();
 
         ArrayList<Integer> u_ids = new ArrayList<Integer>();
 

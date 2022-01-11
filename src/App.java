@@ -6,25 +6,25 @@ public class App {
         System.out.println();
         Scanner sc = new Scanner(System.in);
         login l = new login();
-        String role = l.login_main();
+        String ID = l.login_main();
         // System.out.println(role);
         // sc.nextLine();
         verify: while (true) {
-            while (role == "invalid") {
+            while (ID == "invalid") {
                 System.out.println("Press 1 to Retry\nPress 2 to Register");
                 System.out.print("Enter Choice :: ");
                 int choice = sc.nextInt();
 
                 if (choice == 1) {
-                    role = l.login_main();
+                    ID = l.login_main();
                 } else {
                     register r = new register();
                     r.register_main();
-                    role = l.login_main();
+                    ID = l.login_main();
                 }
             }
 
-            if (role == "user") {
+            if (ID.length() != 4) {
                 int choice;
                 while (true) {
                     System.out.println(
@@ -36,23 +36,23 @@ public class App {
                     switch (choice) {
                         case 1:
                             View_result vr = new View_result();
-                            vr.view_result_main();
+                            vr.view_result_main(ID);
                             break;
                         case 2:
                             apply_as_candidate apc = new apply_as_candidate();
-                            apc.apply_as_candidate_main();
+                            apc.apply_as_candidate_main(ID);
                             break;
                         case 3:
                             vote_in_election vie = new vote_in_election();
-                            vie.vote_in_election_main();
+                            vie.vote_in_election_main(ID);
                             break;
                         case 4:
                             apply_voter_id avi = new apply_voter_id();
-                            avi.apply_voter_id_main();
+                            avi.apply_voter_id_main(ID);
                             break;
                         case 5:
                             view_voter_id vvi = new view_voter_id();
-                            vvi.view_voter_id_main();
+                            vvi.view_voter_id_main(ID);
                             break;
                         case 6:
                             System.out.print(
@@ -62,7 +62,7 @@ public class App {
                                 sc.close();
                                 System.exit(0);
                             } else {
-                                role = l.login_main();
+                                ID = l.login_main();
                                 continue verify;
                             }
                         default:
@@ -109,7 +109,7 @@ public class App {
                                 sc.close();
                                 System.exit(0);
                             } else {
-                                role = l.login_main();
+                                ID = l.login_main();
                                 continue verify;
                             }
                         default:

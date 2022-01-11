@@ -2,11 +2,9 @@ import java.util.*;
 import java.sql.*;
 
 public class View_result {
-    public void view_result_main() {
+    public void view_result_main(String ID) {
         Scanner scan = new Scanner(System.in);
-        int u_id;
-        System.out.print("Enter User ID :: ");
-        u_id = scan.nextInt();
+        int u_id = Integer.parseInt(ID);
 
         String database_user = "uhzci14vwfvrompx";
         String database_password = "UrNhWEKwSchauVtObk0x";

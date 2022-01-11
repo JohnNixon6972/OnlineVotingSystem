@@ -28,11 +28,11 @@ public class login {
                 
                 if (id.length() == 4){
                     rs = stmt.executeQuery("select * from admin");
-                    role = "admin";
+                    role = id;
                 }
                 else{
                     rs = stmt.executeQuery("select * from users");
-                    role = "user";
+                    role = id;
                 }
                 int u_id;
                 String u_paasword;

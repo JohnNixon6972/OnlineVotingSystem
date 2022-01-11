@@ -2,7 +2,7 @@ import java.util.*;
 import java.sql.*;
 
 public class vote_in_election {
-    public void vote_in_election_main() {
+    public void vote_in_election_main(String ID) {
 
         int u_id, e_id, confirm, vote_for_c_id, vote = 1;
         String constituency, position_id;
@@ -10,20 +10,19 @@ public class vote_in_election {
         String database_password = "UrNhWEKwSchauVtObk0x";
 
         Scanner sc = new Scanner(System.in);
-
-        System.out.print("Enter your user_id : ");
-        u_id = sc.nextInt();
+        u_id = Integer.parseInt(ID);
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection(
-                    "jdbc:mysql://uhzci14vwfvrompx:UrNhWEKwSchauVtObk0x@bggkb6uymbi8nrygousy-mysql.services.clever-cloud.com:3306/bggkb6uymbi8nrygousy", database_user, database_password);
+                    "jdbc:mysql://uhzci14vwfvrompx:UrNhWEKwSchauVtObk0x@bggkb6uymbi8nrygousy-mysql.services.clever-cloud.com:3306/bggkb6uymbi8nrygousy",
+                    database_user, database_password);
             Statement stmt = con.createStatement();
             ResultSet rs;
             String query1 = String.format("Select user_id from users where user_id = " + u_id + ";");
             rs = stmt.executeQuery(query1);
             rs.next();
-            System.out.println("Your user_id is as follows :" + rs.getInt(1));
+            // System.out.println("Your user_id is as follows :" + rs.getInt(1));
 
             String query2 = String.format("Select voter_id from voter_id_list where user_id = " + u_id + ";");
             rs = stmt.executeQuery(query2);
@@ -105,8 +104,9 @@ public class vote_in_election {
                     System.out.println(rs.getInt(1));
                     votes_gained = rs.getInt(1) + 1;
 
-                    String query7 = String.format("update candidates set no_of_votes =  \"%d\" where c_id = \"%d\" and p_id = \"%s\";",
-                            votes_gained, vote_for_c_id,position_id);
+                    String query7 = String.format(
+                            "update candidates set no_of_votes =  \"%d\" where c_id = \"%d\" and p_id = \"%s\";",
+                            votes_gained, vote_for_c_id, position_id);
                     stmt.executeUpdate(query7);
                     System.out.print(query7);
                     String query9 = String.format("Insert into votes_casted values(\"%d\",\"%d\",\"%d\");", vote, u_id,

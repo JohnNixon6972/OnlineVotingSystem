@@ -2,15 +2,11 @@ import java.util.*;
 import java.sql.*;
 
 public class view_voter_id {
-    public void view_voter_id_main() {
-
+    public void view_voter_id_main(String ID) {
         Scanner sc = new Scanner(System.in);
-        int u_id;
+        int u_id =Integer.parseInt(ID);
         String database_user = "uhzci14vwfvrompx";
         String database_password = "UrNhWEKwSchauVtObk0x";
-
-        System.out.println("Enter your user ID : ");
-        u_id = sc.nextInt();
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");

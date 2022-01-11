@@ -8,7 +8,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
 public class apply_voter_id {
-    public void apply_voter_id_main() {
+    public void apply_voter_id_main(String ID) {
 
         String  para4;
         List<String> para2;
@@ -16,9 +16,7 @@ public class apply_voter_id {
         Scanner sc = new Scanner(System.in);
         String database_user = "uhzci14vwfvrompx";
         String database_password = "UrNhWEKwSchauVtObk0x";
-        int user_id;
-        System.out.println("Enter your user_id : ");
-        user_id = sc.nextInt();
+        int user_id = Integer.parseInt(ID);
 
         ArrayList<Integer> u_ids = new ArrayList<Integer>();
         try {
