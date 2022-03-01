@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Register</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="main">
+
+        <!-- Sign up form -->
+        <section class="signup">
+            <div class="container">
+                <div class="signup-content">
+                    <div class="signup-form">
+                        <h2 class="form-title">Sign up</h2>
+                        <form method="POST" action ="register.jsp" class="register-form" id="register-form">
+                            <div class="form-group">
+                                <label for="name"><i class="material-icons">person</i></label>
+                                <input type="text" name="fname" id="fname" placeholder="First Name" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="name"><i class="material-icons">person</i></label>
+                                <input type="text" name="lname" id="lname" placeholder="Last Name" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="email"><i class="material-icons">email</i></label>
+                                <input type="email" name="email" id="email" placeholder="Your Email" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="pass"><i class="material-icons">password</i></label>
+                                <input type="password" name="pass" id="pass" placeholder="Password" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="re-pass"><i class="material-icons">password</i></label>
+                                <input type="password" name="re_pass" id="re_pass" placeholder="Repeat your password" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="aadhar_no"><i class="material-icons">remember_me</i></label>
+                                <input type="number" name="aadhar_no" id="aadhar_no" placeholder="Aadhar Card Number" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="constituency"><i class="material-icons">location_on</i></label>
+                                <input type="text" name="constituency" id="constituency" placeholder="Constituency" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="city"><i class="material-icons">location_city</i></label>
+                                <input type="text" name="city" id="city" placeholder="City" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="State"><i class="material-icons">balcony</i></label>
+                                <input type="text" name="state" id="state" placeholder="State" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="address"><i class="material-icons">contact_mail</i></label>
+                                <input type="text" name="address" id="address" placeholder="Address" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="mob_no"><i class="material-icons">edgesensor_high</i></label>
+                                <input type="number" name="mob_no" id="mob_no" placeholder="Mobile Number" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="date_of_birth"><i class="material-icons">date_range</i></label>
+                                <input type="date" name="dob" id="dob" placeholder="Date of Birth" max="2010-01-01" required/>
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                                <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                            </div>
+                            <div class="form-group form-button">
+                                <input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="signup-image">
+                        <figure><img src="images/signup-image.jpg" alt="sing up image"></figure>
+                        <a href="./login.html" class="signup-image-link">I am already member</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
